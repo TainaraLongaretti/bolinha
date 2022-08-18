@@ -29,7 +29,7 @@ function setup() {
      isStatic: true
    };
   
-   btn2 = createImg('up.png');
+  btn2 = createImg('up.png');
   btn2.position(350,30);
   btn2.size(50,50);
   btn2.mouseClicked(vForce);
@@ -45,7 +45,8 @@ function setup() {
   World.add(world,ground); 
 
   
-  ground2 = new Ground (150, 200, 40, 40, angle);
+  //obs: não passar a propriedade angle aqui, apenas valores de x, y, w e h
+  ground2 = new Ground (150, 200, 40, 40);
   ground3 = new Ground (200, 200, 40, 40);
   ground4 = new Ground (250, 200, 40, 40);
   ground5 = new Ground (300, 200, 40, 40);
@@ -65,14 +66,15 @@ function draw()
   ground4.show();
   ground5.show();
   
-  //Matter.Body.rotate(ground1,angle)
-  push();
+  Matter.Body.rotate(ground1,angle)
+  //obs: rodar apenas na classe
+ /* push();
   translate(ground1.position.x,ground1.position.y);
   rotate(angle);
   rect(0,0,100,20);
   pop();
   
-  angle +=0.1;
+  angle +=0.1; */
 
  
 
